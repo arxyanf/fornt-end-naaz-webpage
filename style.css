@@ -80,3 +80,46 @@ body { font-family: 'Inter', sans-serif; color: #000; background: #fff; }
 }
 .close-btn { float: right; font-size: 24px; cursor: pointer; }
 .checkout-btn { width: 100%; padding: 15px; background: #25D366; color: white; border: none; margin-top: 20px; cursor: pointer; font-weight: bold;}
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+
+    /* 1. Fix the Header Spacing */
+    .navbar {
+        padding: 15px 20px; /* Less padding so it fits */
+    }
+
+    /* 2. Hide the middle menu links on phone (Too crowded!) */
+    .nav-links li {
+        display: none; /* Hides everything */
+    }
+    .nav-links .cart-icon {
+        display: block; /* But keeps the Cart visible */
+    }
+
+    /* 3. Make the Product Grid 2-Columns (Like Zara App) */
+    .product-grid {
+        /* Forces 2 items side-by-side */
+        grid-template-columns: 1fr 1fr; 
+        gap: 8px; /* Smaller gap */
+        padding: 80px 10px 10px; /* Adjust padding */
+    }
+
+    /* 4. Make Product Text Smaller for Phone */
+    .product-card img {
+        height: 250px; /* Shorter images so you see more */
+    }
+    .product-info h3 {
+        font-size: 9px; /* Smaller font */
+    }
+    .add-btn {
+        padding: 10px; /* Smaller button */
+        font-size: 10px;
+    }
+    
+    /* 5. Fix the "Add" button sticking on mobile */
+    /* On phones, we want the button usually visible or smaller */
+    .add-btn {
+        transform: translateY(0); /* Always show button on mobile */
+        background: rgba(0,0,0,0.8); /* Semi-transparent */
+    }
+}
