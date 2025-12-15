@@ -1,0 +1,82 @@
+/* Reset and Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #000; background: #fff; }
+
+/* Navigation - Sticky and Minimal */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 40px; position: fixed; width: 100%; top: 0;
+    background: rgba(255, 255, 255, 0.95); z-index: 1000;
+}
+.logo { font-weight: 900; letter-spacing: 2px; font-size: 24px; text-transform: uppercase; }
+.nav-links { list-style: none; display: flex; gap: 30px; }
+.nav-links a { text-decoration: none; color: black; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.cart-icon { cursor: pointer; font-weight: 600; font-size: 12px;}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1600') center/cover no-repeat;
+    display: flex; align-items: center; justify-content: center;
+}
+.hero-text button {
+    padding: 15px 40px; background: white; border: none; 
+    cursor: pointer; font-weight: bold; letter-spacing: 2px;
+    transition: 0.3s;
+}
+.hero-text button:hover { background: black; color: white; }
+
+/* Product Grid - The "Zara" Layout */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px; /* Small gap like high-fashion sites */
+    padding: 80px 20px 20px; /* Top padding clears the navbar */
+}
+
+.tag {
+    position: absolute; top: 10px; left: 10px;
+    background: white; color: black;
+    padding: 4px 8px; font-size: 10px; font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Sharper Text Layout */
+.product-info .row {
+    display: flex; justify-content: space-between;
+}
+.product-info h3 {
+    font-size: 10px; color: #333; font-weight: normal;
+}
+.product-info p {
+    font-size: 10px; font-weight: bold; color: #000;
+}
+
+.product-card { position: relative; cursor: pointer; }
+.image-container { position: relative; overflow: hidden; }
+.product-card img { width: 100%; height: 500px; object-fit: cover; transition: transform 0.5s ease; }
+
+.product-card:hover img { transform: scale(1.02); } /* Slight zoom on hover */
+
+/* The Add Button appears on hover */
+.add-btn {
+    position: absolute; bottom: 0; width: 100%;
+    padding: 15px; border: none; background: black; color: white;
+    transform: translateY(100%); transition: transform 0.3s;
+    cursor: pointer; font-family: 'Inter', sans-serif; text-transform: uppercase;
+}
+.product-card:hover .add-btn { transform: translateY(0); }
+
+.product-info { padding: 15px 0; text-align: left; }
+.product-info h3 { font-size: 11px; font-weight: 600; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+.product-info p { font-size: 11px; color: #555; }
+
+/* Modal (Hidden by default) */
+.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; }
+.modal-content { 
+    background: white; width: 400px; height: 100vh; 
+    position: absolute; right: 0; padding: 40px; 
+    overflow-y: auto; 
+}
+.close-btn { float: right; font-size: 24px; cursor: pointer; }
+.checkout-btn { width: 100%; padding: 15px; background: #25D366; color: white; border: none; margin-top: 20px; cursor: pointer; font-weight: bold;}
